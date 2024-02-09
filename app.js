@@ -2,6 +2,7 @@ const express=require("express")
 const cors=require("cors")
 const mongoose=require("mongoose")
 const loginroute=require("./controllers/loginRouter")
+const resumeroute=require("./controllers/resumeRouter")
 
 //alias name
 const app=express()
@@ -16,6 +17,7 @@ mongoose.connect("mongodb+srv://mahi17700:mahi123@cluster0.6apodnl.mongodb.net/r
 
 //routing
 app.use("/api/login",loginroute)
+app.use("/api/resume",resumeroute)
 
 app.listen(3000,()=>{
     console.log("server running...")
